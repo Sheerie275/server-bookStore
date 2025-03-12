@@ -5,7 +5,7 @@ const User = require("./models/User");
 const cors = require("cors")
 const connectDb = require("./config/connectDb")
 const cookieParser = require("cookie-parser")
-
+const port = process.env.PORT || 3000
 const app = express();
 app.use(cors())
 //Database connection
@@ -85,4 +85,4 @@ app.delete("/book/:id", async (req, res) => {
 
 
 
-app.listen(3000, console.log("server is running on 3000"));
+app.listen(port, console.log("server is running on 3000"));
